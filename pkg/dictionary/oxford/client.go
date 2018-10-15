@@ -67,7 +67,12 @@ func (o OxfordClient) getDefinitions(request dictionary.Request) ([]string, erro
 	var response OxfordResponse
 	json.NewDecoder(resp.Body).Decode(&response)
 
-	return response.GetDefinitions(), nil
+	definitions := response.GetDefinitions()
+	if len(definitions) == 0 {
+		return nil, errors.New("no definitions for this word")
+	}
+
+	return definitions, nil
 }
 
 func (o OxfordClient) getSynonyms(request dictionary.Request) ([]string, error) {
@@ -79,7 +84,12 @@ func (o OxfordClient) getSynonyms(request dictionary.Request) ([]string, error) 
 	var response OxfordResponse
 	json.NewDecoder(resp.Body).Decode(&response)
 
-	return response.GetSynonyms(), nil
+	synonyms := response.GetSynonyms()
+	if len(synonyms) == 0 {
+		return nil, errors.New("no synonyms for this word")
+	}
+
+	return synonyms, nil
 }
 
 func (o *OxfordClient) get(path string) (*http.Response, error) {
