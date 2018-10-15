@@ -20,7 +20,7 @@ func (l LineClient) Handler(dictClient dictionary.Client) http.HandlerFunc {
 		if err != nil || request.Method != http.MethodPost {
 			log.Println(err)
 			l.Reply(bot.Request{
-				Token: replyToken,
+				Token:    replyToken,
 				Messages: []string{"invalid request"},
 			})
 			return
@@ -30,14 +30,14 @@ func (l LineClient) Handler(dictClient dictionary.Client) http.HandlerFunc {
 		if err != nil {
 			log.Println(err)
 			l.Reply(bot.Request{
-				Token: replyToken,
+				Token:    replyToken,
 				Messages: []string{err.Error()},
 			})
 			return
 		}
 
 		dictClient.Fetch(dictionary.Request{
-			Word: word,
+			Word:  word,
 			Token: replyToken,
 		})
 	}

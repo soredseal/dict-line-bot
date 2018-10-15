@@ -11,21 +11,21 @@ type LineWebhookRequest struct {
 }
 
 type LineEvent struct {
-	Type string `json:"type"`
-	ReplyToken string `json:"replyToken"`
-	Source LineEventSource `json:"source"`
-	Timestamp internal.Time `json:"timestamp"`
-	Message LineEventMessage `json:"message"`
+	Type       string           `json:"type"`
+	ReplyToken string           `json:"replyToken"`
+	Source     LineEventSource  `json:"source"`
+	Timestamp  internal.Time    `json:"timestamp"`
+	Message    LineEventMessage `json:"message"`
 }
 
 type LineEventSource struct {
-	UserId string `json:"userId"`
+	UserId     string `json:"userId"`
 	SourceType string `json:"type"`
 }
 
 type LineEventMessage struct {
 	Type string `json:"type"`
-	Id string `json:"id"`
+	Id   string `json:"id"`
 	Text string `json:"text"`
 }
 
@@ -47,8 +47,8 @@ func (w LineWebhookRequest) GetReplyToken() string {
 }
 
 type LineReply struct {
-	ReplyToken string `json:"replyToken"`
-	Messages []LineMessage `json:"messages"`
+	ReplyToken string        `json:"replyToken"`
+	Messages   []LineMessage `json:"messages"`
 }
 
 type LineMessage struct {

@@ -65,7 +65,7 @@ func TestWebhookRequest_GetWord(t *testing.T) {
 			t.Fatalf("Expected %s but got %s", expected, actual)
 		}
 	})
-	
+
 	t.Run("from multiple lines", func(t *testing.T) {
 		var body []byte
 		body = []byte(`{

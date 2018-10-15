@@ -2867,7 +2867,7 @@ func TestResponse_GetSynonyms(t *testing.T) {
 		actual := response.GetSynonyms()
 		assertStringArray(t, expected, actual)
 	})
-	
+
 	t.Run("Less than 5 in first subSense", func(t *testing.T) {
 		var body []byte
 		body = []byte(`{
@@ -3517,4 +3517,3 @@ func assertStringArray(t *testing.T, expected []string, actual []string) {
 		t.Fatalf("Expected %+v but got %+v", expected, actual)
 	}
 }
-

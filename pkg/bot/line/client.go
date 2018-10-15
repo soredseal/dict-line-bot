@@ -12,7 +12,7 @@ import (
 )
 
 type LineConfig struct {
-	BaseUrl string
+	BaseUrl     string
 	AccessToken string
 }
 
@@ -46,7 +46,7 @@ func (l LineClient) replyToLine() {
 		}
 		reply := LineReply{
 			ReplyToken: data.Token,
-			Messages: messages,
+			Messages:   messages,
 		}
 
 		err := l.postReply(reply)
@@ -81,8 +81,6 @@ func (l LineClient) post(path string, body interface{}) (*http.Response, error) 
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Authorization", "Bearer " + l.config.AccessToken)
+	req.Header.Set("Authorization", "Bearer "+l.config.AccessToken)
 	return http.DefaultClient.Do(req)
 }
-
-

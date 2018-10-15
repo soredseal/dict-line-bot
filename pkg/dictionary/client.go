@@ -1,7 +1,7 @@
 package dictionary
 
 type Request struct {
-	Word string
+	Word  string
 	Token string
 }
 

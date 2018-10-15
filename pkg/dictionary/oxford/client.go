@@ -19,7 +19,7 @@ type OxfordConfig struct {
 type OxfordClient struct {
 	config OxfordConfig
 	input  chan dictionary.Request
-	client    bot.Client
+	client bot.Client
 }
 
 func NewOxfordClient(config OxfordConfig, bot bot.Client) *OxfordClient {
@@ -27,7 +27,7 @@ func NewOxfordClient(config OxfordConfig, bot bot.Client) *OxfordClient {
 	producer := &OxfordClient{
 		config: config,
 		input:  input,
-		client:    bot,
+		client: bot,
 	}
 	go producer.fetchFromOxford()
 	return producer

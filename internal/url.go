@@ -16,4 +16,3 @@ func MakeUrl(base, path string) (string, error) {
 	u.Path = u.Path + path
 	return u.String(), nil
 }
-

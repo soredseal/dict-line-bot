@@ -14,7 +14,7 @@ func (r OxfordResponse) GetSynonyms() []string {
 	cnt := 0
 	var synonyms []string
 
-	outerLoop:
+outerLoop:
 	for _, subSense := range r.Results[0].LexicalEntries[0].Entries[0].Senses[0].SubSenses {
 		for _, synonym := range subSense.Synonyms {
 			synonyms = append(synonyms, synonym.Text)

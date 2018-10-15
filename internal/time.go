@@ -9,7 +9,6 @@ type Time struct {
 	time.Time
 }
 
-
 func (t *Time) UnmarshalJSON(b []byte) error {
 	timestamp := []rune(string(b))[0:10]
 	epoch, err := strconv.ParseInt(string(timestamp), 10, 64)
@@ -19,4 +18,3 @@ func (t *Time) UnmarshalJSON(b []byte) error {
 	*t = Time{time.Unix(epoch, 0)}
 	return nil
 }
-
