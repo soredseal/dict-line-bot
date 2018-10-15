@@ -14,6 +14,7 @@ import (
 type LineConfig struct {
 	BaseUrl     string
 	AccessToken string
+	Secret      string
 }
 
 type LineClient struct {

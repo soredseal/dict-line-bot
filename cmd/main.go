@@ -11,9 +11,11 @@ func main() {
 	appId := os.Getenv("OXFORD_APP_ID")
 	appKey := os.Getenv("OXFORD_APP_KEY")
 	lineAccessToken := os.Getenv("LINE_ACCESS_TOKEN")
+	lineSecret := os.Getenv("LINE_SECRET")
 	lineClient := bot.NewLineClient(bot.LineConfig{
 		BaseUrl:     "https://api.line.me/v2",
 		AccessToken: lineAccessToken,
+		Secret: lineSecret,
 	})
 	oxfordClient := dictionary.NewOxfordClient(dictionary.OxfordConfig{
 		BaseUrl: "https://od-api.oxforddictionaries.com/api/v1",
