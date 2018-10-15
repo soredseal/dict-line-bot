@@ -1,0 +1,11 @@
+{
+  "features": {
+    "cloud": "v2"
+  },
+  "env": {
+    "LINE_ACCESS_TOKEN": "@line_access_token",
+    "LINE_SECRET": "@line_secret",
+    "OXFORD_APP_ID": "@oxford_app_id",
+    "OXFORD_APP_KEY": "@oxford_app_key"
+  }
+}
