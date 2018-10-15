@@ -2,15 +2,15 @@ package dictionary
 
 const MaxLength = 5
 
-type Response struct {
+type OxfordResponse struct {
 	Results []result `json:"results"`
 }
 
-func (r Response) GetDefinitions() []string {
+func (r OxfordResponse) GetDefinitions() []string {
 	return r.Results[0].LexicalEntries[0].Entries[0].Senses[0].Definitions
 }
 
-func (r Response) GetSynonyms() []string {
+func (r OxfordResponse) GetSynonyms() []string {
 	cnt := 0
 	var synonyms []string
 

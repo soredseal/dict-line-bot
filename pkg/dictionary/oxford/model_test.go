@@ -129,7 +129,7 @@ func TestResponse_GetDefinitions(t *testing.T) {
                                         },
                                         {
                                             "definitions": [
-                                                "(on a map or graph) a curve connecting all points having a specified common property."
+                                                "(on a map or graph) a curve connecting all points having a specified config property."
                                             ],
                                             "domains": [
                                                 "Geography",
@@ -901,7 +901,7 @@ func TestResponse_GetDefinitions(t *testing.T) {
                         },
                         {
                             "etymologies": [
-                                "late Middle English: from obsolete line ‘flax’, with reference to the common use of linen for linings"
+                                "late Middle English: from obsolete line ‘flax’, with reference to the config use of linen for linings"
                             ],
                             "grammaticalFeatures": [
                                 {
@@ -985,7 +985,7 @@ func TestResponse_GetDefinitions(t *testing.T) {
     ]
 }`)
 		expected := []string{"a long, narrow mark or band"}
-		var response Response
+		var response OxfordResponse
 		json.Unmarshal(body, &response)
 		actual := response.GetDefinitions()
 		assertStringArray(t, expected, actual)
@@ -2862,7 +2862,7 @@ func TestResponse_GetSynonyms(t *testing.T) {
     ]
 }`)
 		expected := []string{"underline", "underscore", "stroke", "slash", "virgule"}
-		var response Response
+		var response OxfordResponse
 		json.Unmarshal(body, &response)
 		actual := response.GetSynonyms()
 		assertStringArray(t, expected, actual)
@@ -3383,7 +3383,7 @@ func TestResponse_GetSynonyms(t *testing.T) {
     ]
 }`)
 		expected := []string{"novel", "storybook", "manual", "handbook", "guide"}
-		var response Response
+		var response OxfordResponse
 		json.Unmarshal(body, &response)
 		actual := response.GetSynonyms()
 		assertStringArray(t, expected, actual)
@@ -3502,7 +3502,7 @@ func TestResponse_GetSynonyms(t *testing.T) {
     ]
 }`)
 		expected := []string{"reffo"}
-		var response Response
+		var response OxfordResponse
 		json.Unmarshal(body, &response)
 		actual := response.GetSynonyms()
 		assertStringArray(t, expected, actual)

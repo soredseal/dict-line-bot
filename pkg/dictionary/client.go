@@ -1,6 +1,10 @@
 package dictionary
 
+type Request struct {
+	Word string
+	Token string
+}
+
 type Client interface {
-	GetDefinitions(word string) ([]string, error)
-	GetSynonyms(word string) ([]string, error)
+	Fetch(request Request)
 }
